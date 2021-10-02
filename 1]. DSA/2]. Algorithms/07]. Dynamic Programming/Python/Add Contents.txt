@@ -1,0 +1,71 @@
+Dynamic Programming
+
+Dynamic Programming (commonly referred to as DP) is an algorithmic technique for solving a problem by recursively breaking it down into simpler subproblems and using the fact that the optimal solution to the overall problem depends upon the optimal solution to its individual subproblems.
+
+The technique was developed by Richard Bellman in the 1950s.
+
+DP algorithm solves each subproblem just once and then remembers its answer, thereby avoiding re-computation of the answer for a similar subproblem every time.
+
+It is the most powerful design technique for solving optimization related problems.
+
+Multistage decision-making process
+
+The multistage decision-making process can be separated into a number of sequential steps, or stages, which is completed in one or more ways. The options for completing stages are known as decisions. The condition of the process at a given stage is known as a state at that stage. Each decision affects a transition from the current state to a state associated with the next stage.
+
+Dynamic programming is an approach for optimizing multistage decision-making processes. It is based on Bellman’s principle of optimality: that whatever the initial state is remaining decisions must be optimal with regard to the state following from the first decision.
+
+Characteristics of Dynamic Programming
+
+We can apply the DP technique to those problems that exhibit the below 2 characteristics:
+
+1. Optimal Substructures
+
+Any problem is said to be having optimal substructure property if its overall optimal solution can be evaluated from the optimal solutions of its subproblems.
+
+Consider the example of Fibonacci Numbers.
+
+We know that a nth Fibonacci number (Fib(n)) is nothing but sum of previous 2 fibonacci numbers, i.e: Fib(n) = Fib(n-1) + Fib(n-2). 
+
+From the above equation, we can clearly deduce that a problem of size ‘n’ has been reduced to subproblems of size ‘n-1’ and ‘n-2’.
+Hence, we can say that Fibonacci numbers have the optimal substructure property.
+
+2. Overlapping Subproblems
+
+Subproblems are basically the smaller versions of an original problem. Any problem is said to have overlapping subproblems if calculating its solution involves solving the same subproblem multiple times.
+
+Let us take the example of finding nth Fibonacci number. Consider evaluating Fib(5). As shown in the breakdown of steps shown in the image below.
+We can see that Fib(5) is calculated by taking the sum of Fib(4) and Fib(3) and Fib(4) is calculated by taking the sum of Fib(3) and Fib(2) and so on. Clearly, we can see that Fib(3), Fib(2), Fib(1) and Fib(0) has been repeatedly evaluated. These are nothing but overlapping subproblems. 
+
+Note: It is important for a problem to have BOTH the above specified characteristics in order to be eligible to be solved using DP technique.
+
+
+Dynamic Programming Methods
+We have the following two methods in the DP technique. We can use any one of these techniques to solve a problem in an optimised manner.
+
+Top-Down Approach (Memoization)
+
+Top-Down Approach is the method where we solve a bigger problem by recursively finding the solution to smaller sub-problems.
+Whenever we solve a smaller subproblem, we remember (cache) its result so that we don’t solve it repeatedly if it’s called many times. Instead of solving repeatedly, we can just return the cached result.
+This method of remembering the solutions of already solved subproblems is called Memoization.
+
+
+Bottom-Up Approach (Tabulation)
+
+As the name indicates, the bottom-up is the opposite of the top-down approach which avoids recursion.
+Here, we solve the problem “bottom-up” way i.e. by solving all the related subproblems first. This is typically done by populating into an n-dimensional table. 
+Depending on the results in the table, the solution to the original problem is then computed. This approach is therefore called “Tabulation”.
+Applications
+Before diving into DP, let us first understand where do we use DP.
+
+The core concept of DP is to avoid repeated work by remembering partial results (results of subproblems). This is very critical in terms of boosting the performance and speed of the algorithm. Most of the problems in computer science and the real world can be solved using the DP technique.
+
+In real-life scenarios, consider the example where I have to go from home to work every day. For the first time, I can calculate the shortest path between home and work by considering all possible routes. But, it is not feasible to do the calculation every day. Hence, I will be memorizing that shortest path and will be following that route every day. In computer science terms, Google Maps will be using the DP algorithm to find the shortest paths between two points.
+Largest Common Subsequence (LCS) problem - Basis of data comparison problems and to identify plagiarism in the contents.
+
+Longest Increasing Subsequence problem - used in DNA Matching between two individuals. Generally, the DNAs are represented as strings and to form a match between DNAs of two individuals, the algorithm needs to find out the longest increasing subsequence between them. In cases of DNA match, the longest common substring (LCS) is also found.
+
+
+Knapsack Problem
+
+You have a bag of limited capacity and you decide to go on a challenging trek. Due to the capacity restriction, you can only carry certain items in optimum quantity. How do you select the materials and their quantity in an efficient manner so that you don’t miss out on important items? That’s where DP comes into aid. 
+Apart from the above, DP has found its importance in various fields like Bioinformatics, Operations research, Decision Making, Image Processing, MATLAB, MS Word, MS Excel, Financial Optimisations, Genetics, XML indexing and querying and what not!
